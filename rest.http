@@ -1,0 +1,31 @@
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTUxNjYzNjEsImV4cCI6MTcxNTE2NjM3NiwiYXVkIjoiNjYzYjU5MzYyYTMwM2Q2MDAwZDBjYTZhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.K0bkpQmz7D1BbESF3PHc9nn9cD3GBCG7hPPhOATXjmI
+
+###Login route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "minhdevtree@gmail.com",
+    "password": "123456"
+}
+
+###Register route
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "newuser@gmail.com",
+    "password": "123456"
+}
+
+###Refresh token route
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTUxNjcwODMsImV4cCI6MTc0NjcyNDY4MywiYXVkIjoiNjYzYjVmNmIyZjYwZDFlMjdhNzc0OTNiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.P6NWoNnQN3IES8_e8E2MZw9bA61QXevJYo55OZ9iTH4"
+}
+
+###Logout route
+DELETE http://localhost:3000/auth/logout
