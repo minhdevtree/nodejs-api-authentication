@@ -1,5 +1,5 @@
 GET http://localhost:3000
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzAzNDksImV4cCI6MTcxNjAzMzk0OSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.BUPji_jXHsBXt0XO5wHXYzv2hfa4pL7MtLo5w_3t4J0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTcxNjAzNTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.6rreny9bbzNFrNgFgZcE7rh2uYfytgBQxiyKzJiSuHI
 
 ###Login route
 POST http://localhost:3000/auth/login
@@ -24,7 +24,7 @@ POST http://localhost:3000/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzAzNDksImV4cCI6MTc0NzU4Nzk0OSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.ridxC6MxjUZBL5CHlU8zZ9wMacHQgTE68Y4ZaQeJelc"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTc0NzU4OTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.o0Z54KZ-ilFZjqnufX-WI2ohPQjFKzC2Vp_3AZrO0Jw"
 }
 
 ###Logout route
@@ -32,5 +32,13 @@ DELETE http://localhost:3000/auth/logout
 Content-Type: application/json
 
 {
-    "refreshToken" :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzAzNDksImV4cCI6MTc0NzU4Nzk0OSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.ridxC6MxjUZBL5CHlU8zZ9wMacHQgTE68Y4ZaQeJelc"
+    "refreshToken" :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTc0NzU4OTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.o0Z54KZ-ilFZjqnufX-WI2ohPQjFKzC2Vp_3AZrO0Jw"
+}
+
+###Logout all route
+DELETE http://localhost:3000/auth/logout-all
+Content-Type: application/json
+
+{
+    "refreshToken" :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTc0NzU4OTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.o0Z54KZ-ilFZjqnufX-WI2ohPQjFKzC2Vp_3AZrO0Jw"
 }

@@ -1,6 +1,7 @@
 const JWT = require('jsonwebtoken');
 const createError = require('http-errors');
 const client = require('./init_redis');
+const os = require('os');
 
 module.exports = {
     signAccessToken: userId => {
@@ -56,7 +57,7 @@ module.exports = {
 
                 // Save the refresh token in Redis, expire in 1 year
                 await client.set(
-                    `refreshToken-${userId}`,
+                    `refreshToken-${os.hostname()}-${os.platform()}-${userId}`,
                     token,
                     'EX',
                     365 * 24 * 60 * 60
@@ -73,7 +74,9 @@ module.exports = {
                 async (err, payload) => {
                     if (err) return reject(createError.Unauthorized());
                     const userId = payload.aud;
-                    const result = await client.get(`refreshToken-${userId}`);
+                    const result = await client.get(
+                        `refreshToken-${os.hostname()}-${os.platform()}-${userId}`
+                    );
                     if (refreshToken === result) return resolve(userId);
                     reject(createError.Unauthorized());
                 }

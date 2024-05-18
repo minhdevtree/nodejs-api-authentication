@@ -2,12 +2,12 @@ const createError = require('http-errors');
 const User = require('../models/user.model');
 const client = require('../helpers/init_redis');
 const { registerSchema, loginSchema } = require('../helpers/validation_schema');
+const os = require('os');
 
 const {
     signAccessToken,
     signRefreshToken,
     verifyRefreshToken,
-    deleteRefreshToken,
 } = require('../helpers/jwt_helper');
 
 module.exports = {
@@ -84,7 +84,24 @@ module.exports = {
             if (!refreshToken) throw createError.BadRequest();
             const userId = await verifyRefreshToken(refreshToken);
 
-            await client.del(`refreshToken-${userId}`);
+            await client.del(
+                `refreshToken-${os.hostname()}-${os.platform()}-${userId}`
+            );
+            res.sendStatus(204);
+        } catch (error) {
+            next(error);
+        }
+    },
+    logoutAll: async (req, res, next) => {
+        try {
+            const { refreshToken } = req.body;
+            if (!refreshToken) throw createError.BadRequest();
+            const userId = await verifyRefreshToken(refreshToken);
+
+            const keys = await client.keys(`refreshToken-*-${userId}`);
+            keys.forEach(async key => {
+                await client.del(key);
+            });
             res.sendStatus(204);
         } catch (error) {
             next(error);

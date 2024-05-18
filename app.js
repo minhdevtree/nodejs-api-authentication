@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const createError = require('http-errors');
 const { verifyAccessToken } = require('./helpers/jwt_helper');
+const os = require('os');
 
 require('dotenv').config();
 require('./helpers/init_mongodb');
@@ -10,6 +11,11 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const computerName = os.hostname();
+const platform = os.platform();
+console.log('Computer Name:', computerName);
+console.log('Platform:', platform);
 
 app.get('/', verifyAccessToken, async (req, res, next) => {
     res.send('Hello from express');
