@@ -48,11 +48,10 @@ module.exports = {
             if (!isMatch) {
                 throw createError.Unauthorized('Username/password not valid');
             }
-            console.log(user.id);
-            const accessToken = await signAccessToken(user.id);
-            console.log('acc', accessToken);
+
+            const accessToken = await signAccessToken(user);
             const refreshToken = await signRefreshToken(user.id);
-            console.log('ref', refreshToken);
+
             res.send({ accessToken, refreshToken });
         } catch (error) {
             if (error.errors) {
@@ -70,7 +69,9 @@ module.exports = {
             if (!refreshToken) throw createError.BadRequest();
             const userId = await verifyRefreshToken(refreshToken);
 
-            const accessToken = await signAccessToken(userId);
+            const user = await User.findById(userId);
+
+            const accessToken = await signAccessToken(user);
             const refToken = await signRefreshToken(userId);
 
             res.send({ accessToken: accessToken, refreshToken: refToken });
@@ -89,6 +90,7 @@ module.exports = {
             );
             res.sendStatus(204);
         } catch (error) {
+            console.log(error.message);
             next(error);
         }
     },

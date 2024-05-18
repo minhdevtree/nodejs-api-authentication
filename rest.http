@@ -1,8 +1,8 @@
-GET http://localhost:3000
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTcxNjAzNTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.6rreny9bbzNFrNgFgZcE7rh2uYfytgBQxiyKzJiSuHI
+GET http://localhost:9999
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwNTEyMDEsImV4cCI6MTcxNjA1MTIyMSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5OTk5In0.Vf63RXjW22wPqWQDLJsFcUt-WWYI-TeQPFrUqAta51U
 
 ###Login route
-POST http://localhost:3000/auth/login
+POST http://localhost:9999/auth/login
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###Register route
-POST http://localhost:3000/auth/register
+POST http://localhost:9999/auth/register
 Content-Type: application/json
 
 {
@@ -20,15 +20,15 @@ Content-Type: application/json
 }
 
 ###Refresh token route
-POST http://localhost:3000/auth/refresh-token
+POST http://localhost:9999/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTc0NzU4OTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.o0Z54KZ-ilFZjqnufX-WI2ohPQjFKzC2Vp_3AZrO0Jw"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwNTEyMDEsImV4cCI6MTc0NzYwODgwMSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5OTk5In0.rLfU7zT_lzp_yEWTcbc277KafBesanxE5K-cYlg4EV0"
 }
 
 ###Logout route
-DELETE http://localhost:3000/auth/logout
+DELETE http://localhost:9999/auth/logout
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 
 ###Logout all route
-DELETE http://localhost:3000/auth/logout-all
+DELETE http://localhost:9999/auth/logout-all
 Content-Type: application/json
 
 {
