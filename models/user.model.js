@@ -13,18 +13,23 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    status: {
+        type: String,
+        enum: ['NOT_ACTIVE', 'ACTIVE', 'BANNED', 'DELETED'],
+        default: 'NOT_ACTIVE',
+    },
 });
 
-UserSchema.pre('save', async function (next) {
-    try {
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(this.password, salt);
-        this.password = hashedPassword;
-        next();
-    } catch (error) {
-        next(error);
-    }
-});
+// UserSchema.pre('save', async function (next) {
+//     try {
+//         const salt = await bcrypt.genSalt(10);
+//         const hashedPassword = await bcrypt.hash(this.password, salt);
+//         this.password = hashedPassword;
+//         next();
+//     } catch (error) {
+//         next(error);
+//     }
+// });
 
 UserSchema.methods.isValidPassword = async function (password) {
     try {

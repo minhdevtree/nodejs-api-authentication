@@ -1,12 +1,16 @@
 GET http://localhost:9999
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwNTEyMDEsImV4cCI6MTcxNjA1MTIyMSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5OTk5In0.Vf63RXjW22wPqWQDLJsFcUt-WWYI-TeQPFrUqAta51U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkZXZ0cmVlQGdtYWlsLmNvbSIsImlhdCI6MTcxNjA4NjMwOSwiZXhwIjoxNzE2MDg5OTA5LCJhdWQiOiI2NjQ4OGI0NWUzNmIwNGU4ZmRmYzcyMTQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojk5OTkifQ.YyqtEOH5hsU5kcSYsRiq3GQfOJR5sGe-0f8BNpSsn2w
+
+### Demo API
+GET http://localhost:9999/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkZXZ0cmVlQGdtYWlsLmNvbSIsImlhdCI6MTcxNjA4NjMwOSwiZXhwIjoxNzE2MDg5OTA5LCJhdWQiOiI2NjQ4OGI0NWUzNmIwNGU4ZmRmYzcyMTQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojk5OTkifQ.YyqtEOH5hsU5kcSYsRiq3GQfOJR5sGe-0f8BNpSsn2w
 
 ###Login route
 POST http://localhost:9999/auth/login
 Content-Type: application/json
 
 {
-    "email": "minhdevtree@gmail.com",
+    "email": "minhht.1.2.vn@gmail.com",
     "password": "123456"
 }
 
@@ -15,7 +19,7 @@ POST http://localhost:9999/auth/register
 Content-Type: application/json
 
 {
-    "email": "minhdevtree@gmail.com",
+    "email": "minhht.1.2.vn@gmail.com",
     "password": "123456"
 }
 
@@ -24,7 +28,7 @@ POST http://localhost:9999/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwNTEyMDEsImV4cCI6MTc0NzYwODgwMSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5OTk5In0.rLfU7zT_lzp_yEWTcbc277KafBesanxE5K-cYlg4EV0"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwODYzMDksImV4cCI6MTc0NzY0MzkwOSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5OTk5In0.SWS_57OfikROoH5DNYLwcFQvMnGm9eGcHNIour-oGuU"
 }
 
 ###Logout route
@@ -32,7 +36,7 @@ DELETE http://localhost:9999/auth/logout
 Content-Type: application/json
 
 {
-    "refreshToken" :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwMzIzNTYsImV4cCI6MTc0NzU4OTk1NiwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.o0Z54KZ-ilFZjqnufX-WI2ohPQjFKzC2Vp_3AZrO0Jw"
+    "refreshToken" :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYwODYzMDksImV4cCI6MTc0NzY0MzkwOSwiYXVkIjoiNjY0ODhiNDVlMzZiMDRlOGZkZmM3MjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5OTk5In0.SWS_57OfikROoH5DNYLwcFQvMnGm9eGcHNIour-oGuU"
 }
 
 ###Logout all route

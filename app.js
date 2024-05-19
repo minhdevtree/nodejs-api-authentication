@@ -17,8 +17,19 @@ const platform = os.platform();
 console.log('Computer Name:', computerName);
 console.log('Platform:', platform);
 
+// Demo data
+const users = [
+    { id: 1, name: 'Alex' },
+    { id: 2, name: 'Max' },
+    { id: 3, name: 'Hagard' },
+];
+
 app.get('/', verifyAccessToken, async (req, res, next) => {
     res.send('Hello from express');
+});
+
+app.get('/users', verifyAccessToken, async (req, res, next) => {
+    res.send(users);
 });
 
 const authRoute = require('./routes/auth.route');
